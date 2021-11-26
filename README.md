@@ -39,4 +39,4 @@ yarn start
 2. Preencher os inputs abaixo de Sala S com texto.
 3. Pressionar enviar para o retorno das listas ordenas em ordem crescente e alfabética.
 4. Preencher os inputs abaixo de Intervalo A e Intervalo B com números.
-5. Pressionar enviar para o retorno do valor booleano informando se as litas possuem intersecção.
+5. Pressionar enviar para o retorno do valor booleano informando se as lista possuem intersecção.
