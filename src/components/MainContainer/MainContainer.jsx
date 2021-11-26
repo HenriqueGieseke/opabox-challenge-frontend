@@ -17,6 +17,8 @@ import {
   ValueWrapper,
 } from './styles';
 import endpointIcon from '../../assets/endpoint-icon.svg';
+import { interlaceRequest } from '../../services/interlaceRequest';
+import { orderListRequest } from '../../services/orderListRequest';
 
 const MainContainer = () => {
   const [roomNInput1, setRoomNInput1] = useState('1');
@@ -45,56 +47,30 @@ const MainContainer = () => {
 
   const orderSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const roomN = [roomNInput1, roomNInput2, roomNInput3, roomNInput4];
-      const roomS = [roomSInput1, roomSInput2, roomSInput3];
+    const roomN = [roomNInput1, roomNInput2, roomNInput3, roomNInput4];
+    const roomS = [roomSInput1, roomSInput2, roomSInput3];
 
-      const roomData = {
-        listas: {
-          salaN: roomN,
-          salaS: roomS,
-        },
-      };
+    const roomData = {
+      listas: {
+        salaN: roomN,
+        salaS: roomS,
+      },
+    };
 
-      await axios({
-        method: 'post',
-        url: 'http://localhost:8080/ordenaLista',
-        data: roomData,
-      }).then((res) => {
-        setRoomsResponse({
-          responseStatus: true,
-          rooms: res.data,
-        });
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    await orderListRequest(roomData, setRoomsResponse);
   };
 
   const interlaceSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const intervalA = [intervalAInput1, intervalAInput2];
-      const intervalB = [intervalBInput1, intervalBInput2];
+    const intervalA = [intervalAInput1, intervalAInput2];
+    const intervalB = [intervalBInput1, intervalBInput2];
 
-      const intervalData = {
-        intervaloA: intervalA,
-        intervaloB: intervalB,
-      };
+    const intervalData = {
+      intervaloA: intervalA,
+      intervaloB: intervalB,
+    };
 
-      await axios({
-        method: 'post',
-        url: 'http://localhost:8080/interlace?',
-        data: intervalData,
-      }).then((res) => {
-        setIntervalsResponse({
-          responseStatus: true,
-          interlace: res.data,
-        });
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    await interlaceRequest(intervalData, setIntervalsResponse);
   };
 
   return (
