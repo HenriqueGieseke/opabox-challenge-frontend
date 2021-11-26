@@ -131,7 +131,11 @@ export const ReturnTitle = styled.span`
   margin-bottom: 0.5rem;
 `;
 
-export const ReturnValue = styled.span``;
+export const ReturnValue = styled.div`
+  span:not(:last-child) {
+    margin-right: 1rem;
+  }
+`;
 
 export const BooleanValue = styled.span`
   text-transform: uppercase;
