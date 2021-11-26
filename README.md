@@ -20,8 +20,15 @@
 
 ## Iniciando a aplicação
 
-1. yarn
-2. yarn start
+<strong>Importante iniciar o Back End antes de usar essa aplicação</strong>
+
+```
+
+yarn
+
+yarn start
+
+```
 
 ## Modo de uso
 
