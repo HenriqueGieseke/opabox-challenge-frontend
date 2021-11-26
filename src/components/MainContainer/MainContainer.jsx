@@ -83,7 +83,7 @@ const MainContainer = () => {
           </TextWrapper>
 
           <form onSubmit={orderSubmit}>
-            <Label htmlFor="">Sala N</Label>
+            <Label>Sala N</Label>
             <InputWrapper>
               <input
                 type="number"
@@ -110,7 +110,7 @@ const MainContainer = () => {
                 required
               />
             </InputWrapper>
-            <Label htmlFor="">Sala S</Label>
+            <Label>Sala S</Label>
             <InputWrapper>
               <input
                 type="text"
@@ -172,7 +172,7 @@ const MainContainer = () => {
           </TextWrapper>
 
           <form onSubmit={interlaceSubmit}>
-            <Label htmlFor="">Intervalo A</Label>
+            <Label>Intervalo A</Label>
             <InputWrapper>
               <input
                 type="number"
@@ -187,7 +187,7 @@ const MainContainer = () => {
                 onChange={(e) => setIntervalAInput2(e.target.value)}
               />
             </InputWrapper>
-            <Label htmlFor="">Intervalo B</Label>
+            <Label>Intervalo B</Label>
             <InputWrapper>
               <input
                 type="number"
